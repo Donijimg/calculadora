@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calculator {
+  padding: 1%;
+    width: 300px;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .display {
+    grid-column: 1 / span 4;
+    background-color: #fff;
+    text-align: right;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+justify-content: center;
+align-items: center; 
+  }
+
+  button {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #e6e6e6;
+  }
+
+  .clear,
+  .dividir,
+  .multiplicar,
+  .restar,
+  .sumar,
+  .resultado {
+    background-color: #ff9933;
+    color: #fff;
+  }
+
+.input {
+  width: 40%;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+.operando{
+  width: 30%;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.continput{
+  width: 100%;
+  grid-column: 1 / span 4;
+  font-size: 24px;
+  font-weight: bold; 
+  display: flex;
+  padding: 3%;
+  justify-items: center;
+  align-items: center;
+gap: 5%;
+}
+.contenedorboton{
+  width: 250px;
+  background-color: #d9d9d9;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
