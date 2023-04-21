@@ -1,45 +1,47 @@
-const num1=document.getElementById("num1")
-const num2=document.getElementById("num2")
-const operando=document.getElementById("operando")
-const display=document.getElementById("display")
+// llamando id y class
+const display=document.getElementById("display");
+const buttons=document.querySelectorAll('.btn');
 const divi=document.getElementById("divi")
 const mult=document.getElementById("mult")
 const rest=document.getElementById("rest")
 const suma=document.getElementById("suma")
 const igual=document.getElementById("igual")
-const limpiar=document.getElementById("limpiar")
-const buttons=document.querySelector('.contenedorboton')
+const limpiar=document.getElementById("C")
 
-buttons.addEventListener('click',(e)=>{
-    switch(e.target.id){
-    case'suma': operando.textContent="+"
-break;
-case'rest': operando.textContent="-"
-break;
-case'mult': operando.textContent="*"
-break;
-case'divi': operando.textContent="/"
-break;
-    }
-if(e.target.id=='igual'){
-    if(operando.textContent=="+"){
-display.textContent=parseInt(num1.value)+parseInt(num2.value)
-    }}
-    if(e.target.id=='igual'){
-        if(operando.textContent=="-"){
-    display.textContent=parseInt(num1.value)-parseInt(num2.value)
-        }}
-        if(e.target.id=='igual'){
-            if(operando.textContent=="/"){
-        display.textContent=parseInt(num1.value)/parseInt(num2.value)
-            }}
-            if(e.target.id=='igual'){
-                if(operando.textContent=="*"){
-            display.textContent=parseInt(num1.value)*parseInt(num2.value)
-                }}
-})
-limpiar.addEventListener('click',(e)=>{
-display.textContent='0'
-num1.value=''
-num2.value=''
-operando.textContent=''})
+// una funcion para para los buttons para visual y muestre en la pantalla
+buttons.forEach(button => {
+    button.addEventListener("click",()=>{
+     const buttonCheck=button.textContent;
+    //   limpiar el display  
+     if(button.id=="C"){
+        display.textContent= "0";
+        return;
+     }
+    //  accion del button borrar
+       if(button.id== "borrar"){
+        // si hay un solo digito en el display que lo vuelva zero
+        if(display.textContent.length == 1 || display.textContent == "Error" ){
+            display.textContent= "0"
+        }else{// desde donde empiezo y donde termino empieza en 0 y termina en -1 para que empieze desde atras
+            // lo que borra el ultimo digito
+            display.textContent=display.textContent.slice(0, -1);
+        }
+        
+        return;
+       }
+    //    operdor con eval que evalua los parametros encontrados dentro
+       if (button.id == "igual"){
+        try{
+        display.textContent=eval(display.textContent); 
+      }catch(error ){
+        display.textContent="Error";}
+      return;}
+    //    si es 0 remplaza
+       if(display.textContent == "0" || display.textContent == "Error"){
+        display.textContent=buttonCheck
+        // y sino agregar va agregar
+        }else{
+            display.textContent+=buttonCheck
+        }
+        })
+});
