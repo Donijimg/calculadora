@@ -10,95 +10,78 @@ html,body{
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #09311e;
+    display:grid;
+    place-items:center;
   }
 
   .calculator {
-  padding: 1%;
-    width: 300px;
-    background-color: #d9d9d9;
-    border-radius: 5px;
+  
+    background-color: #a1dfc2;
+    color:white;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    width:30vw;
+    height:80vh;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    gap: .5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   }
 
-  .display {
-    grid-column: 1 / span 4;
-    background-color: #fff;
+  .display{
+
+width: 100%;
+height:12vh;
+
+    grid-column: 1 /-1;
+    background-color:#8cfad0;
+    box-shadow: 0 0 10px#39e6a4;
+    padding: 1.5em;
+    font-size: 2rem;
     text-align: right;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: bold;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    font-family:monospace;
+    font-weight: 600;
+    overflow:scroll;
+
+  }
+
+  .display::-webkit-scrollbar {
+    display: none;
+}
+.btn {
+    background-color: #8ac7ab;
+    color: #ffffff;
+    border: 0;
+    padding: 1.5rem .5rem;
     display: flex;
-justify-content: center;
-align-items: center; 
-  }
-
-  button {
-    background-color: #f2f2f2;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
     cursor: pointer;
+    font-size: 2rem;
   }
-
-  button:hover {
-    background-color: #e6e6e6;
-  }
-
-  .clear,
-  .dividir,
-  .multiplicar,
-  .restar,
-  .sumar,
-  .resultado {
-    background-color: #ff9933;
-    color: #fff;
-  }
-
-.input {
-  width: 40%;
-  background-color: #f2f2f2;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  cursor: pointer;
-}
-.operando{
-  width: 30%;
-  background-color: #f2f2f2;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  cursor: pointer;
-display: flex;
-justify-content: center;
-align-items: center;
+.btn:hover{
+  background-color: #21744d;
+  box-shadow: 0 0 10px #00ff88;
 }
 
-.continput{
-  width: 100%;
-  grid-column: 1 / span 4;
-  font-size: 24px;
-  font-weight: bold; 
-  display: flex;
-  padding: 3%;
-  justify-items: center;
-  align-items: center;
-gap: 5%;
+#zero{
+  grid-column:span 2;
 }
+#igual{
+grid-row:span 2;
+background-color: #e63939;
+}
+#igual:hover{
+background-color:#e65757;
+box-shadow: 0 0 10px#e63939;
+}
+
 .contenedorboton{
   width: 250px;
   background-color: #d9d9d9;
